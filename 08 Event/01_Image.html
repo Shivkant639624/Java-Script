@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <h2 >Some amezing Pictures</h2>
+
+    <div>
+        <ul id="images" >
+            <li type="none"><img src="./images/SkyView.jpg" width="200px" id="photoshoot" alt="Photoshoot"></li>
+            <li type="none"><img src="./images/SuperTech.jpg"  width="200px"id="supertech" alt=""></li>
+            <li type="none"><img src="./images/temple.jpg" width="200px" id="temple" alt=""></li>
+            <li type="none"><img src="./images/Vrindawan.jpg" width="200px" id="vrindawan" alt=""></li>
+            <li type="none"><img src="./images/NightView.jpg" width="200px" id="nightview" alt=""></li>
+            <li type="none"><img src="./images/selfie.jpg" width="200px" id="selfie" alt=""></li>
+            <li type="none"><a style="color: aliceblue;"  href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+        
+</body>
+<script>
+    // document.getElementById("nightview").onclick = function(){
+    //     alert("Clicked on nightview image")
+    // }
+
+    //  attachEvent()
+    //  jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clintX, clintY, screenX, ScreenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // bubbling mode = false => when there are two event to occure parent and one itself, then parent should be show at the end first event should be ocuure itself
+    // captuering mode = true =>
+
+    // document.getElementById("images").addEventListener('click',function(e){
+    //     console.log("Clicked inside the ul");        
+    // }, false)
+
+    // document.getElementById("selfie").addEventListener('click',function(e){
+    //     console.log("Selfie image clicked"); 
+    //     // now the event will not buble to its parent event
+    //     e.stopPropagation()       
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     // to stop buble
+    //     e.stopPropagation()
+    //     console.log("Google clicked")
+    // },false)
+    
+    document.querySelector('#images').addEventListener('click',function(e){
+        // console.log(e);
+        // console.log(e.target); // on what we are clicking -image
+        // console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        if(e.target.tagName == "IMG")
+        {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove();
+        }
+
+        
+
+       
+       
+       
+        // removeIt.parentNode.removeChild(removeIt)
+
+    },false)
+    
+
+</script>
+
+</html>

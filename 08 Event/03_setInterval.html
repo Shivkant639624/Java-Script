@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<body>
+    <h1>This is 3rd HTML file</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // document.querySelector("start").addEventListener('click',function(){
+
+    // })
+    // document.querySelector("stop").addEventListener('click',function(){
+        
+    // })
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+
+    const intervalID = setInterval(sayDate,1000,"hello");
+    clearInterval(intervalID)
+</script>
+
+</html>
