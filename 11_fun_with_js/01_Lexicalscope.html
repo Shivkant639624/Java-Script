@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clouser And Chai</title>
+</head>
+<body style="background-color: #313131;">    
+</body>
+<script>
+    
+    // Lexical scoping
+    function outer(){
+        let username = "Shivkant"
+        function inner(){
+            console.log("Inner One : "+username);
+        }
+        function innerTwo(){
+            console.log("Inner Two : "+username);
+        }
+        inner();
+        innerTwo();
+    }
+    outer()
+    console.log(username); // can not be access
+
+
+</script>
+</html>

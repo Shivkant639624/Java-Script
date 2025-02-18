@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div">
+        <h2>click on the buttone to get photo and followers</h2>
+        <button id="submit">Click here</button>
+    </div>
+    
+</body>
+<script>
+            
+    // console.log("XMLHttpRequest has been created")
+    
+    document.querySelector('#submit').addEventListener('click',function(){
+        const div = document.querySelector('div')
+        
+        while(div.firstChild){
+            div.removeChild(div.firstChild);
+        }
+        // div.innerHTML="Removed" 
+        const reqURL = 'https://api.github.com/users/hiteshchoudhary'
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET',reqURL)
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4){
+                const data = JSON.parse(this.responseText)
+                // console.log(data)
+                const followers = data.followers
+                const photoUrl = data.avatar_url
+                // console.log(this.responseText)
+                const imgAtt = document.createElement("img")
+                imgAtt.setAttribute('src',photoUrl)
+                imgAtt.setAttribute('width',"200px")
+                imgAtt.setAttribute('height',"200px")
+
+                const pAtt = document.createElement("p")
+                pAtt.textContent = `Total Folower count : ${followers}`       
+                
+                div.appendChild(imgAtt);
+                div.appendChild(pAtt);
+            }       
+        }
+        xhr.send()
+        
+        // div.setAttribute = `<h1>hello</h1>`
+        // div.setAttribute = `<img src='${photoUrl}'> <br> ${followers}`
+    })
+
+    
+</script>
+</html>

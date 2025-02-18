@@ -1,0 +1,14 @@
+// Write a JavaScript function that checks whether a passed string is palindrome or not
+function palindromeString(str){
+    tempStr = str.split("").reverse().join("")
+    // console.log(tempStr)
+    if(str === tempStr){
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+// palindromeString("iloli")
+console.log(palindromeString("iloli"))
